@@ -1,14 +1,12 @@
-NAME	= dice
-CC		= cc
-WFLAGS	= -Wall -Werror -Wextra
-SRC		= main.c
-OBJ		= $(SRC:.c=.o)
-RM		= rm -f
+NAME	=	prog
+CC		=	cc
+WFLAGS	=	-Wall -Werror -Wextra
+SRC		=	*.c
+OBJ		=	$(SRC:.c=.o)
+RM		=	rm -f
 
 $(NAME):	$(OBJ)
 	@$(CC) $(WFLAGS) $^ -o $(NAME)
-	@make clean
-	@echo "The project as build successful, you can launch dice"
 
 all:		$(NAME)
 
@@ -17,10 +15,8 @@ all:		$(NAME)
 
 clean:
 	@$(RM) $(OBJ)
-	@echo "All tempory files are removed"
 
-fclean:	
+fclean:		clean
 	@$(RM) $(NAME)
-	@echo "All files of game removed, you can build again"
 
 re:			fclean all

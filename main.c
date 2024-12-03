@@ -37,15 +37,15 @@ int	main(int argc, char **argv)
 	int	face;
 
 	face = 0;
-	while (*argv[1] >= '0' && *argv[1] <= '9')
-	{
-		face = face * 10 + *argv[1] - '0';
-		argv[1]++;
-	}
 	if (argc != 2)
 	{
 		ok_putstr("Please try again with one number\n");
 		return (0);
+	}
+	while (*argv[1] >= '0' && *argv[1] <= '9')
+	{
+		face = face * 10 + *argv[1] - '0';
+		argv[1]++;
 	}
 	if (face < 2)
 	{
